@@ -1,4 +1,5 @@
 <ion-content [fullscreen]="true">
+  <app-cabecera titulo="Version:1.0 programacion: Suarez Jose"></app-cabecera>
   <form #afiliadoForm="ngForm" (ngSubmit)="onSubmit()">
     <ion-card>
       <ion-card-content>
@@ -32,7 +33,7 @@
           multiple="false"
           placeholder="Selecione afiliado"
           name="afiliado"
-          [(ngModel)]="trabajo.nombre"
+          [(ngModel)]="trabajo.afiliado"
         >
           <ion-select-option *ngFor="let a of afiliadoser"
             >{{a.nombre}}</ion-select-option
@@ -49,8 +50,8 @@
           name="tarea"
           [(ngModel)]="trabajo.tarea"
         >
-          <ion-select-option *ngFor="let a of tareas"
-            >{{a}}</ion-select-option
+          <ion-select-option *ngFor="let tarea of tareas"
+            >{{tarea}}</ion-select-option
           >
         </ion-select>
       </ion-card-content>
@@ -62,6 +63,9 @@
       [disabled]="!afiliadoForm.form.valid"
     >
       Registrar Trabajo
+    </ion-button>
+    <ion-button *ngIf="trabajo.id" color="danger" (click)="borrar()">
+      Borrar
     </ion-button>
   </form>
 </ion-content>

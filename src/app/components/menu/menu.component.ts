@@ -7,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent  implements OnInit {
 
-  menu:String[]=
-    ['uno','dos','tres']
+  menu: { name: string, path: string }[] = [
+    { name: 'List Area', path: '/listarea' },
+    { name: 'Option Two', path: '/optiontwo' },
+    { name: 'Option Three', path: '/optionthree' }
+  ];
   ;
   constructor() { }
 

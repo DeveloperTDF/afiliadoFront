@@ -6,6 +6,15 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
+  // {
+  //   path: 'listarea',
+  //   loadChildren: () => import('./listarea/listarea.module').then( m => m.ListareaPageModule)
+  // },
+  
+  // {
+  //   path: 'agregar-tarea',
+  //   loadChildren: () => import('./agregar-tarea/agregar-tarea.module').then( m => m.AgregarTareaPageModule)
+  // },
   
  
 ];

@@ -26,19 +26,25 @@ export class Tab3Page implements OnInit {
     }); // Actualiza la lista de afiliados cada vez que la vista se muestra
   }
 
-
+  
   handleInput(event: any) {
-    const query = (event.detail.value || '').toLowerCase();
-
-    // Filtrar la lista en base a las propiedades 'nombre'
-    this.results = this.lista.filter((item) =>
-      item.nombre.toLowerCase().includes(query)
-    );
+    const query = (event.detail.value || '').toLowerCase().trim();
+  
+    // Dividir la consulta en varias palabras (keywords)
+    const keywords: string[] = query.split(' ');
+  
+    // Filtrar la lista en base a las palabras clave
+    this.results = this.lista.filter((item) => {
+      // Verificar si todas las palabras clave están presentes en alguna de las propiedades
+      return keywords.every((keyword: string) =>
+        item.nombre.toLowerCase().includes(keyword) ||
+        item.direccion.toLowerCase().includes(keyword) ||
+        item.telefono.toLowerCase().includes(keyword)
+      );
+    });
   }
+  
+  
+  
 }
 
-// public results = [...this.lista];
-// lista = [
-//   { fecha: '2024-01-01', nombre: 'Ejemplo', direccion:'eva perorn 554', telefono:'123456' },
-//   { fecha: '2024-01-02', nombre: 'candela', direccion:'rosale 554', telefono:'987654' },
-// ];

@@ -1,8 +1,8 @@
 
 export interface Trabajo{
-
+    id?         :   string;
     fecha       :   String;
     turno       :   String;
-    nombre      :   String;    
+    afiliado      :   String;    
     tarea       :   String;
 }

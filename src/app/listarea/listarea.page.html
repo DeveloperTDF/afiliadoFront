@@ -1,3 +1,4 @@
+
 <ion-content [fullscreen]="true">
   <app-cabecera titulo="Version:1.0 programacion: Suarez Jose"></app-cabecera>
   <ion-searchbar [debounce]="1000" (ionInput)="handleInput($event)"></ion-searchbar>
@@ -5,20 +6,11 @@
   <ion-card *ngFor="let l of results">
     <ion-card-content>
       FECHA: {{l.fecha}} <br />
-      NOMBRE: {{l.nombre}} <br />
-      DIRECCION: {{l.direccion}} <br />
-      TELEFONO: {{l.telefono}} <br />
+      TURNO: {{l.turno}} <br />
+      AFILIADO: {{l.afiliado}} <br />
+      TAREA: {{l.tarea}} <br />
       
     </ion-card-content>
-    <ion-button expand="full" [routerLink]="['/tabs/editar', l.id]">editar</ion-button>
+    <ion-button expand="full" [routerLink]="['/tabs/editarTarea', l.id]">editar</ion-button>
   </ion-card>
 </ion-content>
-
-
-
-
-
-
-
-
-
